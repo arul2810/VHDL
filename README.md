@@ -1,4 +1,4 @@
-# VHDL
+# VHDL - FGPA for System On Chip 
 
 
 Contains VHDL Project Files.
