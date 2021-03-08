@@ -1,7 +1,7 @@
-# VHDL - FGPA for System On Chip 
+# Verilog HDL - FGPA for System On Chip 
 
 
-Contains VHDL Project Files.
+Contains Verilog HDL Project Files.
 
 Complied using Quartus Prime Lite 17 for 5CSEMA5F31C6 
 
