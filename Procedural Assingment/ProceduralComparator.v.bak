@@ -1,0 +1,35 @@
+/* 1- Bit Adder Module
+* ---------------------
+* By: Arul Prakash Samathuvamani
+*
+*
+*
+* Date : 8th March 2021
+*
+* Module Description:
+* ------------------
+*
+* Performs Procedural Comparator.	
+*/
+
+module ProceduralComparator(
+
+input [7:0] a,
+input [7:0]b,
+output a_high,
+output b_high,
+output equal
+);
+
+
+always @ *  begin 
+
+assign a_high = ( a > b ) // a_high is 1 when a > b
+
+assign b_high = ( b > a ) // b_high is 1 when b >a 
+
+assign equal = ( b == a  ) // when a -- b , equal is high
+
+end 
+
+endmodule 
