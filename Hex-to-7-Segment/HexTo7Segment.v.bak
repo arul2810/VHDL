@@ -1,0 +1,240 @@
+/* Hexadecimal to 7 Segment Encoder
+* ---------------------
+* By: Arul Prakash Samathuvamani
+* For: University of Leeds 
+* 
+*
+* Date : 5th March
+*
+* Module Description:
+* ------------------
+*  Hexadecimal to 7 Segment Verilog Procedural Block	
+* 
+*/
+
+
+module HexTo7Segment(
+
+input [3:0]hex,  // 4-bit hexadecimal input
+
+
+output reg [6:0]seg
+
+);
+
+initial begin // Assigns the value during the initialisation of block.
+
+seg[0] = LOW ;
+seg[1] = LOW ;
+seg[2] = LOW ;
+seg[3] = LOW ;
+seg[4] = LOW ;
+seg[5] = LOW ;
+seg[6] = LOW ;
+
+end 
+
+
+
+always @ (hex) begin  // Runs when ever the value of hex changes		
+
+case (hex) // Case statement runs when hex is equal to following constant
+		
+	4'h1 : begin
+		seg[0] = LOW;
+	seg[1] = HIGH;
+	seg[2] = HIGH;
+	seg[3] = LOW;
+	seg[4] = LOW;
+	seg[5] = LOW;
+	seg[6] = LOW
+
+	end
+	
+	4'h2 : begin
+		
+	seg[0] = HIGH;
+	seg[1] = HIGH;
+	seg[2] = LOW;
+	seg[3] = HIGH;
+	seg[4] = HIGH;
+	seg[5] = LOW;
+	seg[6] = HIGH;
+	
+	end
+	
+	4'h3 : begin
+	
+	seg[0] = HIGH;
+	seg[1] = HIGH;
+	seg[2] = HIGH;
+	seg[3] = HIGH;
+	seg[4] = LOW;
+	seg[5] = LOW;
+	seg[6] = HIGH;
+	
+	end
+	
+	4'h4 : begin
+	
+	seg[0] = LOW;
+	seg[1] = HIGH;
+	seg[2] = HIGH;
+	seg[3] = LOW;
+	seg[4] = LOW;
+	seg[5] = HIGH;
+	seg[6] = HIGH;
+	
+	end
+
+	4'h5 : begin
+	
+	seg[0] = HIGH;
+	seg[1] = LOW;
+	seg[2] = HIGH;
+	seg[3] = HIGH;
+	seg[4] = LOW;
+	seg[5] = HIGH;
+	seg[6] = HIGH;
+	
+	end
+	
+	4'h6 : begin
+	
+	seg[0] = HIGH;
+	seg[1] = LOW;
+	seg[2] = HIGH;
+	seg[3] = HIGH;
+	seg[4] = HIGH;
+	seg[5] = HIGH;
+	seg[6] = HIGH;
+	
+	end
+
+	4'h7 : begin
+	
+	seg[0] = HIGH;	
+	seg[1] = HIGH;	
+	seg[2] = HIGH;
+	seg[3] = LOW;
+	seg[4] = LOW;
+	seg[5] = LOW;
+	seg[6] = LOW;
+	
+	end
+	
+	4'h8 : begin
+	
+	seg[0] = HIGH;
+	seg[1] = HIGH;
+	seg[2] = HIGH;
+	seg[3] = HIGH;
+	seg[4] = HIGH;
+	seg[5] = HIGH;
+	seg[6] = HIGH;
+	
+	end
+	
+	4'h9 : begin 
+	
+	seg[0] = HIGH;	
+	seg[1] = HIGH;
+	seg[2] = HIGH;
+	seg[3] = HIGH;
+	seg[4] = LOW;
+	seg[5] = HIGH;
+	seg[6] = HIGH;
+	
+	end
+	
+	4'hA : begin 
+	
+	seg[0] = HIGH;
+	seg[1] = HIGH;
+	seg[2] = HIGH;
+	seg[3] = LOW;
+	seg[4] = HIGH;
+	seg[5] = HIGH;
+	seg[6] = HIGH;
+	
+	end
+	
+	4'hB : begin 
+	
+	seg[0] = LOW;
+	seg[1] = LOW;
+	seg[2] = HIGH;
+	seg[3] = HIGH;
+	seg[4] = HIGH;
+	seg[5] = HIGH;
+	seg[6] = HIGH;
+	
+	end
+	
+	4'hC : begin
+	
+	seg[0] = HIGH;
+	seg[1] = LOW;
+	seg[2] = LOW;
+	seg[3] = HIGH;
+	seg[4] = HIGH;
+	seg[5] = HIGH;
+	seg[6] = LOW;
+	
+	end
+	
+	4'hD : begin
+	
+	seg[0] = LOW;
+	seg[1] = HIGH;
+	seg[2] = HIGH;
+	seg[3] = HIGH;
+	seg[4] = HIGH;
+	seg[5] = LOW;
+	seg[6] = HIGH;
+	
+	end
+	
+	4'hE : begin
+	
+	seg[0] = HIGH;
+	seg[1] = LOW;
+	seg[2] = LOW;
+	seg[3] = HIGH;
+	seg[4] = HIGH;
+	seg[5] = HIGH;
+	seg[6] = HIGH;
+	
+	end
+	
+	4'hF : begin 
+	
+	seg[0] = HIGH;
+	seg[1] = LOW;
+	seg[2] = LOW;
+	seg[3] = LOW;
+	seg[4] = HIGH;
+	seg[5] = HIGH;
+	seg[6] = HIGH;
+	
+	end
+	
+end case
+
+end 
+
+end module
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+		
