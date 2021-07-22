@@ -1,0 +1,115 @@
+/* seven_segment.v 
+
+--------------------------------------------------------------------------------------------------------------------
+
+Module Name : Seven Segment Display Verilog Module
+
+Module Description : Module to control seven segment display
+
+Module Author : Arul Prakash Samathuvamani
+
+Date: 16/5/2021
+
+-------------------------------------------------------------------------------------------------------------------- 
+
+Changelog :
+
+
+
+
+*/
+
+
+module seven_segment (
+
+	// Declaration of input pins
+	
+	input [1:0] state, // says what to display
+	
+	input [7:0] thres, // says what number to display
+	
+	output [6:0] seg1, // output to 7-segment1
+	 
+	output [6:0] seg2, // output to 7-segment2
+	
+	output [6:0] seg3, // output to 7-segment3
+	
+	output [6:0] seg4, // output to 7-segment4
+	
+	output [6:0] seg5, // output to 7-segment5
+	
+	output [6:0] seg6 // output to 7-segment6
+	
+);
+
+// --------------------------------------------------------------------------------------------------------------
+
+
+// Definition of states to the module
+
+	localparam BASE = 2'b00;
+	localparam GRAY =  2'b01;
+	localparam SOBEL = 2'b10;
+	localparam THRES = 2'b11;
+	
+// Seven Segment lookup registers
+
+	(*ram_init_file = "seg_lookup.mif"*)
+	reg [20:0] lookup [251:0];
+	
+	
+	reg [20:0] buffer;
+	
+	always @ ( * ) begin
+	
+		case ( state ) 
+		
+			BASE : begin
+			
+				seg6 = 7'b1110100; // displays "h"
+				seg5 = 7'b1111011; // displays "e"
+				seg4 = 7'b0110000; // displays "l"
+				seg3 = 7'b0110000; // displays "l"
+				seg2 = 7'b0111111; // displays "0"
+				seg1 = 7'b0000000;
+				
+			end
+			
+			GRAY : begin
+			
+				seg6 = 7'b1101111; // displays "g"
+				seg5 = 7'b0110001; // displays "r"
+				seg4 = 7'b1110111; // displays "a"
+				seg3 = 7'b1101110; // displays "y"
+				seg2 = 7'b0000000;
+				seg1 = 7'b0000000;
+				
+			end
+			
+			SOBEL : begin
+			
+				seg6 = 7'b1111011; // displays "e"
+				seg5 = 7'b1011110; // displays "d"
+				seg4 = 7'b1101111; // displays "g"
+				seg3 = 7'b1111011; // displays "e"
+				seg2 = 7'b0000000;
+				seg1 = 7'b0000000;
+				
+			end
+			
+			THRES : begin
+			
+				seg6 = 7'b1111000; // displays "t"
+				seg5 = 7'b1110100; // displays "h"
+				seg4 = 7'b0110001; // displays "r"
+				
+				buffer = lookup [ thres ];
+				seg3 = buffer [20:14];
+				seg2 = buffer [13:7];
+				seg1 = buffer [6:0];
+				
+			end
+		endcase
+	end
+	
+	endmodule 

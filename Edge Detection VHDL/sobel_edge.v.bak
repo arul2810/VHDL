@@ -1,0 +1,147 @@
+/* sobel_edge.v 
+
+--------------------------------------------------------------------------------------------------------------------
+
+Module Name : Sobel Edge Verilog Module
+
+Module Description : Module used to calculate sobel edge and sobel threshold for a given input image.
+
+Module Author : Arul Prakash Samathuvamani, LT24 Module provided by University of Leeds - Author - Thomas Carpenter
+
+Date: 13/5/2021
+
+-------------------------------------------------------------------------------------------------------------------- 
+
+Changelog :
+
+
+
+
+*/
+
+// ----------------------------------------------------------------------------------------------------------------
+
+// Declaration of module sobel_edge
+
+module sobel_edge #(
+
+	/* Parameters for the module
+	
+	IMAGE_WIDTH - Width of input image - Defaults 100
+	IMAGE_HEIGHT - Height of input image - Defaults to 100
+	*/
+	
+	parameter IMAGE_WIDTH = 100,
+	parameter IMAGE_HEIGHT = 100
+	
+) (
+
+/* Input Pins Description:
+
+	Pin Name                |  Description
+	                        |
+	clock                   |  Clock signal
+	globalReset             |  globalReset signal for LT24 Display -> Refer LT24Display module for more info
+	slide_button1           |  Input signal for Slide Switch 0
+	slide_button2           |  Input signal for Slide Switch 1
+	key_button1             |  Input signal for Push Button 1
+	key_button2             |  Input signal for Push Button 2
+	*/
+	
+	input clock,
+	
+	input globalReset,
+	
+	input slide_button1,
+	
+	input slide_button2,
+	
+	input key_button1,
+	
+	input key_button2,
+
+	// Output Pins Declaration
+	
+	// LT24 Display Output Pins -> Based on verilog file written by Thomas Carpenter
+	
+	output LT24Wr_n,
+	
+	output LT24RD_n,
+	
+	output LT24CS_n,
+	
+	output LT24RS,
+	
+	output LT24Reset_n,
+	
+	output [15:0] LT24Data,
+	
+	output LT24LCDOn
+
+);
+
+// ---------------------------------------------------------------------------------------------
+
+
+// Declaration of local variables used in the module
+
+reg [7:0] xAddr;  // x co-ordinate for LT24 Display
+reg [8:0] yAddr;  // y co-ordinate for LT24 Display
+
+
+// xAddr and yAddr is also used to calculate the memory address for images.
+
+
+// ---------------------------------------------------------------------------------------------
+
+
+// LT24 Display parameters -> to satisfy needs of LT24Display Verilog file by Thomas Carpenter
+
+
+reg [15:0] pixelData;
+wire pixelReady;
+reg pixelWrite;
+
+
+//----------------------------------------------------------------------------------------------
+
+
+// Declaration of registers for input image, loaded using .mif Quartus file
+
+( *ram_init_file = "ram.mif" *) // Input 100x100 image -> default
+
+reg [ 15 : 0 ] input_image [ ( ( IMAGE_WIDTH ) * ( IMAGE_HEIGHT) - 1 ) : 0 ];
+
+
+// -------------------------------------------------------------------------------------------
+
+
+
+// Image buffer -> used to convert 16bit Grayscale to RGB565 Format
+
+ref [7:0] image_buffer;
+
+
+// --------------------------------------------------------------------------------------------
+
+// Parameter values used for LCD Display
+
+
+localparam LCD_WIDTH = 240;
+localparam LCD_HEIGHT = 320;
+
+// --------------------------------------------------------------------------------------------
+
+// Parameter values used to denote the size of University of Leeds logo at the start
+
+localparam LOGO_WIDTH = 320;
+localparam LOGO_HEIGHT = 100;
+
+// --------------------------------------------------------------------------------------------
+
+// X Count andn Y Count values
+
+wire [7:0] xCount;
+wire [7:0] yCount;
+
+

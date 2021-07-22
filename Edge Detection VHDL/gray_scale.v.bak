@@ -1,0 +1,125 @@
+module gray_scale #(
+
+	/* Parameters for the module
+	
+	IMAGE_WIDTH - Width of input image - Defaults 100
+	IMAGE_HEIGHT - Height of input image - Defaults to 100
+	*/
+	
+	parameter IMAGE_WIDTH = 100,
+	parameter IMAGE_HEIGHT = 100
+	
+) (
+
+	input clock,
+	
+	input globalReset,
+	
+	input moduleEnable,
+	
+	//input key_button1,
+	
+	//input key_button2,
+
+	// Output Pins Declaration
+	
+	// LT24 Display Output Pins -> Based on verilog file written by Thomas Carpenter
+	
+	output resetApp,
+	
+	output LT24Wr_n,
+	
+	output LT24RD_n,
+	
+	output LT24CS_n,
+	
+	output LT24RS,
+	
+	output LT24Reset_n,
+	
+	output [15:0] LT24Data,
+	
+	output LT24LCDOn
+
+);
+
+reg [7:0] xAddr;
+reg [7:0] yAddr;
+
+reg [15:0] pixelData;
+wire pixelReady;
+reg pixelWrite;
+
+
+(*ram_init_file = "data.mif"*) // Input 100x100 image -> default
+reg [ 7 : 0 ] data [ ( ( IMAGE_WIDTH ) * ( IMAGE_HEIGHT) - 1 ) : 0 ];
+
+
+reg [7:0] image_buffer;
+
+
+localparam STATE1 = 1'b0;
+localparam STATE2 = 1'b1;
+
+reg STATE;
+
+
+localparam LCD_WIDTH = 240;
+localparam LCD_HEIGHT = 320;
+
+
+always @ ( posedge clock or posedge resetApp ) begin
+
+	if ( resetApp ) begin
+		
+		xAddr = 8'b0;
+		yAddr = 8'b0;
+		pixelData = 16'b0;
+		
+	end
+	
+	else if ( pixelReady && moduleEnable ) begin
+	
+	case ( STATE )
+	
+	STATE1 : begin
+	
+		if ( xAddr < IMAGE_WIDTH ) begin
+				if ( yAddr < IMAGE_HEIGHT ) begin
+				
+					
+					image_buffer = data[ ( yAddr * IMAGE_HEIGHT ) + xAddr ] >> 2 ;
+					pixelData [ 15 : 11 ] = image_buffer [5:1];
+					pixelData [ 10 : 5 ] = image_buffer[5:0];
+					pixelData [4:0] = image_buffer [5:1];
+					
+				end
+			end
+			
+		else begin
+			
+			pixelData = 16'b1;
+				
+		end
+	end
+	end
+	
+	STATE2 : begin
+	
+		if ( xAddr < LCD_WIDTH ) begin
+		
+			xAddr = xAddr + 1;
+			
+		end
+		
+		if ( pixelReady && (xAddr == (LCD_WIDTH-1)) ) begin
+		
+			yAddr = yAddr + 1;
+		
+		end
+		
+	end
+	endcase
+end
+endmodule
+	
