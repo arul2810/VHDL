@@ -1,0 +1,1 @@
+add_executable(CMake Bin\ Create.cpp)

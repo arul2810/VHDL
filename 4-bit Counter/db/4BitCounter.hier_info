@@ -1,0 +1,6 @@
+|BitCounter
+clock => count~reg0.ALOAD
+reset => count~reg0.CLK
+count << count~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

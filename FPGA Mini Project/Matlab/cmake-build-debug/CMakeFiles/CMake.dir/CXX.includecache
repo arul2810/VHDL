@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Projects/VHDL/FPGA Mini Project/Matlab/Bin Create.cpp
+iostream
+D:/Projects/VHDL/FPGA Mini Project/Matlab/iostream
+cstdio
+D:/Projects/VHDL/FPGA Mini Project/Matlab/cstdio
+

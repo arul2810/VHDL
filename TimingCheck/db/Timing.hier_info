@@ -1,0 +1,7 @@
+|clock
+clock1 => ~NO_FANOUT~
+clock2 => ~NO_FANOUT~
+a => ~NO_FANOUT~
+q << <GND>
+
+

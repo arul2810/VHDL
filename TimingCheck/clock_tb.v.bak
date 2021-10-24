@@ -1,0 +1,38 @@
+
+reg clock;
+
+reg clock2;
+
+
+clock dut(
+
+.clock1 ( clock ),
+.clock1 ( clcok2 )
+
+);
+
+integer k;
+
+initial begin
+
+for( k = 0; k < 2 ; k++ ) begin
+
+	clock <= 1'b1;
+	#20;
+	clock <= 1'b0;
+	#20;
+	
+end
+
+for ( k=0 ; k < 2 ; k++ ) begin
+
+
+	clock2 <= 1'b1;
+	#40;
+	clock2 <= 1'b0;
+	#40;
+	
+end
+
+end 
+

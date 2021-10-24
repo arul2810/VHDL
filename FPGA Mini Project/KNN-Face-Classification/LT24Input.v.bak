@@ -1,0 +1,44 @@
+module LT24Input (
+
+
+	// clock input
+	
+	input clock,
+	
+	// input reset
+	
+	input reset,
+	
+	// debug
+	
+	output debug,
+	
+	// Interface for LT24Display.v -> following outputs is fed into LT24Display.v
+	
+	output LT24Wr_n,
+	output LT24RD_n,
+	output LT24CS_n,
+	output LT24RS,
+	output LT24Reset_n,
+	output [15:0] LT24Data,
+	output LT24LCDOn
+	
+);
+
+// local variable to store co-ordinates
+
+reg [7:0] x_address;
+reg [7:0] y_address;
+
+// Input Pixel RGB Values
+
+reg [15:0]pixelvalue;
+
+wire pixelReady;
+reg pixelWrite;
+
+// LCD Size 
+
+localparam WIDTH = 240;
+localparam HEIGHT = 320;
+

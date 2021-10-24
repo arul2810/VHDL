@@ -1,0 +1,12 @@
+vendor_name = ModelSim
+source_file = 1, D:/Projects/VHDL/4-bit Counter/BitCounter.v
+source_file = 1, D:/Projects/VHDL/4-bit Counter/db/4BitCounter.cbx.xml
+design_name = BitCounter
+instance = comp, \count~output , count~output, BitCounter, 1
+instance = comp, \reset~input , reset~input, BitCounter, 1
+instance = comp, \clock~input , clock~input, BitCounter, 1
+instance = comp, \count~1 , count~1, BitCounter, 1
+instance = comp, \count~reg0_emulatedfeeder , count~reg0_emulatedfeeder, BitCounter, 1
+instance = comp, \count~reg0_emulated , count~reg0_emulated, BitCounter, 1
+instance = comp, \count~2 , count~2, BitCounter, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, BitCounter, 1

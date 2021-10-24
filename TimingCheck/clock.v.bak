@@ -1,0 +1,25 @@
+module clock(
+
+input clock1,
+
+input clock2,
+
+input a,
+
+output q
+
+);
+
+initial begin
+
+a = 1'b1;
+
+end
+
+always @ (posedge clock1 ) begin
+
+a = q;
+
+end
+
+endmodule

@@ -1,0 +1,194 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Projects/VHDL/3-2-LT24TestProject/simulation
+vLT24Display
+Z1 !s110 1619161676
+!i10b 1
+!s100 g0Ml0H`ILV7gf4e]j455d3
+IHH6dWiSYRl3W]Rh9<nT9J0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1619156337
+Z4 8D:/Projects/VHDL/3-2-LT24TestProject/LT24Display.v
+Z5 FD:/Projects/VHDL/3-2-LT24TestProject/LT24Display.v
+L0 86
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1619161676.000000
+Z8 !s107 D:/Projects/VHDL/3-2-LT24TestProject/LT24Display.v|
+Z9 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Projects/VHDL/3-2-LT24TestProject|D:/Projects/VHDL/3-2-LT24TestProject/LT24Display.v|
+!i113 1
+Z10 o-vlog01compat -work work
+Z11 !s92 -vlog01compat -work work +incdir+D:/Projects/VHDL/3-2-LT24TestProject
+Z12 tCvgOpt 0
+n@l@t24@display
+vLT24DisplayInterface
+R1
+!i10b 1
+!s100 S52Fa_]jASRIg5HK3cSR53
+I_4PHAk?@gBfiE1;[>lDi]3
+R2
+R0
+R3
+R4
+R5
+L0 409
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+n@l@t24@display@interface
+vLT24FunctionalModel
+R1
+!i10b 1
+!s100 nT@I:=O^JHXgZ]h6H>>mV3
+IH2TM?3on66l3LT;bc7DD61
+R2
+R0
+R3
+8D:/Projects/VHDL/3-2-LT24TestProject/simulation/LT24FunctionalModel.v
+FD:/Projects/VHDL/3-2-LT24TestProject/simulation/LT24FunctionalModel.v
+Z13 L0 21
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Projects/VHDL/3-2-LT24TestProject/simulation/LT24FunctionalModel.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Projects/VHDL/3-2-LT24TestProject/simulation|D:/Projects/VHDL/3-2-LT24TestProject/simulation/LT24FunctionalModel.v|
+!i113 1
+R10
+Z14 !s92 -vlog01compat -work work +incdir+D:/Projects/VHDL/3-2-LT24TestProject/simulation
+R12
+n@l@t24@functional@model
+vLT24InitialData
+R1
+!i10b 1
+!s100 [PghI>V`k5H`AnPf[RPc_1
+ILUggB4GK_cHALAA]KhBO_3
+R2
+R0
+R3
+R4
+R5
+L0 523
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+n@l@t24@initial@data
+vLT24Top
+R1
+!i10b 1
+!s100 h9SYH6T7Kh8Yj4^l2?EMj2
+Ieho`WKS5Pe3I?96fY77`T0
+R2
+R0
+R3
+Z15 8D:/Projects/VHDL/3-2-LT24TestProject/LT24Top.v
+Z16 FD:/Projects/VHDL/3-2-LT24TestProject/LT24Top.v
+R13
+R6
+r1
+!s85 0
+31
+R7
+Z17 !s107 D:/Projects/VHDL/3-2-LT24TestProject/LT24Top.v|
+Z18 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Projects/VHDL/3-2-LT24TestProject|D:/Projects/VHDL/3-2-LT24TestProject/LT24Top.v|
+!i113 1
+R10
+R11
+R12
+n@l@t24@top
+vLT24Top_tb
+R1
+!i10b 1
+!s100 >jFl=z;:WDjK]o9ELg0IW2
+IR;dPShd]5GH99Wh2ba`L<0
+R2
+R0
+R3
+8D:/Projects/VHDL/3-2-LT24TestProject/simulation/LT24Top_tb.v
+FD:/Projects/VHDL/3-2-LT24TestProject/simulation/LT24Top_tb.v
+L0 32
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Projects/VHDL/3-2-LT24TestProject/simulation/LT24Top_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Projects/VHDL/3-2-LT24TestProject/simulation|D:/Projects/VHDL/3-2-LT24TestProject/simulation/LT24Top_tb.v|
+!i113 1
+R10
+R14
+R12
+n@l@t24@top_tb
+vResetSynchroniser
+R1
+!i10b 1
+!s100 g4:GWhz>Y3NIW7bPP@X5E0
+IFW1ZER<K_V87<`<YRhYL63
+R2
+R0
+R3
+R4
+R5
+L0 493
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+n@reset@synchroniser
+vUpCounterNbit
+R1
+!i10b 1
+!s100 7BRka@b4<WdUjNMhkM=ab1
+Ie^iKJJGIf>3S2bT>PWU9h0
+R2
+R0
+R3
+R15
+R16
+L0 173
+R6
+r1
+!s85 0
+31
+R7
+R17
+R18
+!i113 1
+R10
+R11
+R12
+n@up@counter@nbit
