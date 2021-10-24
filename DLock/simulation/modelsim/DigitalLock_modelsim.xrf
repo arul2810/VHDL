@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/ip/DigitalLock.v
+source_file = 1, C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/simulation/DigitalLock_tb.v
+source_file = 1, C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/db/DigitalLock.cbx.xml
+design_name = DigitalLock
+instance = comp, \z~output , z~output, DigitalLock, 1
+instance = comp, \clock~input , clock~input, DigitalLock, 1
+instance = comp, \reset~input , reset~input, DigitalLock, 1
+instance = comp, \key[0]~input , key[0]~input, DigitalLock, 1
+instance = comp, \key[1]~input , key[1]~input, DigitalLock, 1
+instance = comp, \key[2]~input , key[2]~input, DigitalLock, 1
+instance = comp, \key[3]~input , key[3]~input, DigitalLock, 1
+instance = comp, \key[4]~input , key[4]~input, DigitalLock, 1
+instance = comp, \key[5]~input , key[5]~input, DigitalLock, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, DigitalLock, 1

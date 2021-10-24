@@ -1,0 +1,130 @@
+/* State Machine Based Digital Lock - Test Bench
+* ---------------------
+* By: Arul Prakash Samathuvamani
+* For: University of Leeds - ELEC5566M Assingment 2
+* 
+*
+* Date : 13th of March 2021
+*
+* Module Description:
+* ------------------
+* Test Bench file for Digital Lock 
+* 
+*/
+
+ `timescale 1 ns/100 ps
+ 
+ 
+ // Initialising Test Bench Module
+ 
+ module DigitalLock_tb;
+ 
+ // Test Bench generated Signals
+ 
+ reg clock;
+ reg reset;
+ reg [4:0]key;
+ 
+ // DUT Output Signal
+ 
+ wire z;
+
+ // Testing Digital Module 'dut'
+ 
+ DigitalLock digitalLock_dut (
+ 
+	.clock(clock),
+	.reset(reset),
+	.key(key),
+	.z(z)
+	
+);
+
+// Logic for test bench
+
+initial begin
+
+	$display(" Simulation Started " );
+	
+	$monitor(" output changed z = %d and state value is STATE : %b " , z , state );
+	
+	// Simulating Key presses
+	
+	key[0] = 1'b1;
+	
+	$display ("State is now : %b" , state );
+	
+	#10;
+	
+	key[0] = 1'b0;
+	
+	#10;
+	
+	key[0] = 1'b1;
+	
+	$display ("State is now : %b" , state );
+	
+	#10;
+	
+	key[0] = 1'b0;
+	
+	#10;
+	
+	key[0] = 1'b1;
+	
+	$display ("State is now : %b" , state );
+	
+	#10;
+	
+	key[0] = 1'b0;
+	
+	#10;
+	key[0] = 1'b1;
+	
+	$display ("State is now : %b" , state );
+	
+	#10;
+	
+	key[0] = 1'b0;
+	
+	#10;
+	key[0] = 1'b1;
+	
+	$display ("State is now : %b" , state );
+	
+	#10;
+	
+	key[0] = 1'b0;
+	
+	#10;
+	key[0] = 1'b1;
+	
+	$display ("State is now : %b" , state );
+	
+	#10;
+	
+	key[0] = 1'b0;
+	
+	#10;
+	key[0] = 1'b1;
+	
+	$display ("State is now : %b" , state );
+	
+	#10;
+	
+	key[0] = 1'b0;
+	
+	#10;
+	key[0] = 1'b1;
+	
+	$display ("State is now : %b" , state );
+	
+	#10;
+	
+	key[0] = 1'b0;
+	
+	#10;
+	
+	
+	
+	

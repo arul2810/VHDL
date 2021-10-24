@@ -1,0 +1,56 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/simulation
+vDigitalLock
+Z1 !s110 1620751313
+!i10b 1
+!s100 [h5>hZ@AT0ZS_Ba9n?UEH3
+Ii[HiLJl?QMI3eij]J^J5:2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1615885869
+8C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/ip/DigitalLock.v
+FC:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/ip/DigitalLock.v
+L0 34
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1620751313.000000
+!s107 C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/ip/DigitalLock.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/ip|C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/ip/DigitalLock.v|
+!i113 1
+Z5 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/ip
+Z6 tCvgOpt 0
+n@digital@lock
+vDigitalLock_tb
+R1
+!i10b 1
+!s100 RSNO0^Ifb70mR3Lm;U_H31
+I>bAge3T`4?@JZ4FQz:IEM1
+R2
+R0
+w1615870755
+8C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/simulation/DigitalLock_tb.v
+FC:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/simulation/DigitalLock_tb.v
+L0 20
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/simulation/DigitalLock_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/simulation|C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/simulation/DigitalLock_tb.v|
+!i113 1
+R5
+!s92 -vlog01compat -work work +incdir+C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/simulation
+R6
+n@digital@lock_tb

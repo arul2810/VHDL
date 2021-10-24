@@ -1,0 +1,221 @@
+# Reading C:/intelFPGA_lite/17.1/modelsim_ase/tcl/vsim/pref.tcl
+# Reading C:/Users/arul2/modelsim.tcl
+# do DigitalLock_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/17.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/ip {C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/ip/DigitalLock.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:11:53 on May 11,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/ip" C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/ip/DigitalLock.v 
+# -- Compiling module DigitalLock
+# 
+# Top level modules:
+# 	DigitalLock
+# End time: 22:11:53 on May 11,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/simulation {C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/simulation/DigitalLock_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:11:53 on May 11,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/simulation" C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/simulation/DigitalLock_tb.v 
+# -- Compiling module DigitalLock_tb
+# 
+# Top level modules:
+# 	DigitalLock_tb
+# End time: 22:11:53 on May 11,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  DigitalLock_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" DigitalLock_tb 
+# Start time: 22:11:54 on May 11,2021
+# Loading work.DigitalLock_tb
+# Loading work.DigitalLock
+# 
+# do C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/../ELEC5566M-Resources/simulation/load_sim.tcl
+#
+# NativeLink Simulation Initialisation Script
+# ===========================================
+# By: Thomas Carpenter
+# Date: 31st December 2017
+# For: University of Leeds
+#
+# Description
+# ===========
+# This is a basic sample script for initialising a simulation
+#
+# All commands in this script will be executed, and comments will
+# be printed to the screen
+#
+# Most of the work in compiling is done by Quartus automatically.
+# Here we can add some extra commands.
+#
+# There is lots of stuff you can do, such as running initialisation
+# scripts, preparing memory contents, setting up the simulator.
+#
+# 
+#
+# First lets clean up any old NativeLink backup files. Quartus
+# creates a new backup file every time it runs. It never deletes
+# these files so you end up with an ever increasing number of them.
+#
+# The {*}[glob -nocomplain ... ] command performs wildcard matching
+# of filenames, to make sure we get all .bak files. The "-nocomplain"
+# and "catch {}" ensure that if no backups exist, there is no error.
+#
+# 
+# catch {file delete {*}[glob -nocomplain *_msim_rtl_verilog.do.bak*]}
+# 0
+# 
+#
+# This will continue executing our script if a break point in the
+# simulation is reached - for example the $stop command in Verilog
+#
+# 
+# onbreak {resume}
+# 
+# 
+# Once you add signals to the Wave view to see them graphically
+# and got them all set up to your liking (Radix, arrangement, etc.)
+# it is possible to save that layout as a "Waveform Format Do File".
+# From modelsim if you click on the Wave window and File->Save Format
+# this will generate the "Do" file for you.
+#
+# I will assume that you saved the file with name "wave.do" (default)
+# in the simulation folder (same place as this TCL).
+#
+# Each time we run the simulation, we can run this file to restore 
+# the setup:
+#
+#   do <filename>
+#
+# Of course the first time you run the simulation the file might not
+# yet exist - you might never choose to save a format. So we also
+# first check if the file exists before do-ing it.
+# 
+# 
+# We normalise the filename to prevent issues with spaces in the filename
+# set waveFile [file normalize "./wave.do"]
+# C:/Users/arul2/Workspace/ELEC5566M-Assignment2-arul2810/simulation/wave.do
+# 
+# if { [file exists $waveFile] } {
+#     #If the saved file exists, load it
+#     do $waveFile
+# } else {
+#     #Otherwise simply add all signals in the testbench formatted as unsigned decimal.
+#     add wave -radix unsigned -position insertpoint sim:/*
+# }
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: arul2  Hostname: PIKACHU  ProcessID: 11884
+#           Attempting to use alternate WLF file "./wlft17yh5q".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft17yh5q
+# 
+#
+# Then we can configure the units for the timeline. Lets stick to
+# nanoseconds instead of the default of picoseconds.
+#
+# 
+# configure wave -timelineunits ns
+# 
+# 
+# Next we can start the simulation. We simply say "run".
+#
+# The "run" command can be followed by a time parameter, such as:
+#
+#     run 100ns     # Run for 100ns
+#     run -all      # Run until the testbench stops changing stimuli
+#     run 10        # Run for 10 "timesteps" (typically 1ps per step)
+#
+# ========== Simulation Starts Here ===========
+# 
+# run -all
+#  Simulation Started 
+#  output changed z = 0
+# 
+# 
+# Testing Locking System
+# 
+# 
+#  The display shows value as expected 
+#  The display shows value as expected 
+#  The display shows value as expected 
+#  The display shows value as expected 
+#  The display shows value as expected 
+#  The display shows value as expected 
+#  The display shows value as expected 
+#  The display shows value as expected 
+#  The display shows value as expected 
+#  The display shows value as expected 
+#  The display shows value as expected 
+#  The display shows value as expected 
+#  output changed z = 1
+#  The system is locked as designed ! 
+#  Lock Value displayed correctly 
+# 
+# 
+#  Checking if wrong pin unlocks the system 
+# 
+# 
+#  Wrong PIN does not unlock the system, and Wrong PIN message is displayed correctly
+# 
+# 
+# Testing Unlocking System
+# 
+# 
+#  The display shows value as expected 
+#  The display shows value as expected 
+#  The display shows value as expected 
+#  The display shows value as expected 
+#  The display shows value as expected 
+#  The display shows value as expected 
+#  output changed z = 0
+#  System Unlocked as expected ! 
+#  UnLock Value displayed correctly 
+# 
+# 
+#  Checking if Error system works when the system is in unlocked state 
+# 
+# 
+#  Error is Flagged ! , System works as expected 
+#  Error is diplayed ! Display works as expected 
+# 
+# 
+#  Checking if the timeout system works as expected 
+# 
+# 
+#  System is not in time out - Check OK ! 
+# 
+# Checking if pressing a button times out system
+# 
+#  System is in time out - Check OK ! 
+# 
+# Checking if the system works after time out
+# 
+#  output changed z = 1
+#  Time out system works ! 
+# 
+# Okay, I have done the testing ! Let's see if we need any pesticides to weed out the bugs !
+# 
+# 
+#  Hurray !! No Bugs for now ! But stay frosty ! Bugs are not visible, but does not mean they are not there ! 
+# 
+# ========== Simulation Ends Here ===========
+#
+# Once the simulation finishes we will reach here
+#
+# Let's for example zoom out in the wave display to fit all data
+#
+# 
+# wave zoom full
+# 0 ps
+# 3696 ns
+# End time: 22:14:20 on May 11,2021, Elapsed time: 0:02:26
+# Errors: 0, Warnings: 2

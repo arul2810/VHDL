@@ -1,0 +1,11 @@
+
+State Machine - |DigitalLock|state
+Name state.STATE_8 state.STATE_7 state.STATE_6 state.STATE_5 state.STATE_4 state.STATE_3 state.STATE_2 state.STATE_1 
+state.STATE_1 0 0 0 0 0 0 0 0 
+state.STATE_2 0 0 0 0 0 0 1 1 
+state.STATE_3 0 0 0 0 0 1 0 1 
+state.STATE_4 0 0 0 0 1 0 0 1 
+state.STATE_5 0 0 0 1 0 0 0 1 
+state.STATE_6 0 0 1 0 0 0 0 1 
+state.STATE_7 0 1 0 0 0 0 0 1 
+state.STATE_8 1 0 0 0 0 0 0 1 

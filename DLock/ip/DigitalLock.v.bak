@@ -1,0 +1,14 @@
+/* State Machine Based Digital Lock
+* ---------------------
+* By: Arul Prakash Samathuvamani
+* For: University of Leeds - ELEC5566M Assingment 2
+* 
+*
+* Date : 13th of March 2021
+*
+* Module Description:
+* ------------------
+* Digital Lock module that unlocks when correct sequence of PIN is entered. This module file is top-level entity
+* 
+*/
+
